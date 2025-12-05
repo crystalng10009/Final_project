@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An comparative analysis between Western and East Asia movies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Import the Cinzel font for movie poster style -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles - Ivory Background */
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #ffffff; /* Keep body white */
+            color: #333;
+            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation - Maroon Theme */
+        header {
+    background: url('poster.jpg') center/cover no-repeat;
+    /* Fallback if photo doesn't load */
+    background-color: #800000;
+    color: white;
+    padding: 1.8rem 0;
+    border-bottom: 3px solid #5a0000;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+}
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(128, 0, 0, 0.85) 0%, rgba(165, 42, 42, 0.75) 100%);
+    z-index: 1;
+}
+
+        
+       .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            color: white;
+            text-transform: uppercase;
+            font-family: 'Cinzel Decorative', serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .logo span {
+            color: #ffcccc;
+            letter-spacing: 2px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+       /* Change navigation link background to deeper maroon */
+/* Keep existing nav styles, just add the border */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(90, 0, 0, 0.8);
+    font-family: 'Trajan Pro', 'Cinzel', serif;
+    letter-spacing: 1px;
+}
+
+/* Optional: Add text shadow for better visibility */
+nav a {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover effect */
+nav a:hover {
+    color: white;
+    background-color: rgba(70, 0, 0, 0.95);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid white; /* Keep white border on hover */
+}
+
+/* Active/current page style */
+nav a.active {
+    background-color: #5A0000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+/* Alternative: Solid color option (no transparency) */
+nav a.solid {
+    background: #5A0000; /* Solid deep maroon */
+    border: 1px solid #6B1A1A;
+}
+
+nav a.solid:hover {
+    background: #4A0000; /* Even darker */
+}
+        /* Emoji in navigation */
+        nav a[href="#introduction"]::before {
+            font-size: 1.2rem;
+            margin-right: 5px;
+        }
+        
+        nav a[href="#method"]::before {
+            font-size: 1.2rem;
+            margin-right: 5px;
+        }
+        
+        nav a[href="#results"]::before {
+            font-size: 1.2rem;
+            margin-right: 5px;
+        }
+        
+        nav a[href="#acknowledgements"]::before {
+            font-size: 1.2rem;
+            margin-right: 5px;
+        }
+        
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+            background-color: white; /* Ivory color */
+        }
+        
+        /* Main Content Area */
+        .main-content {
+            background-color: #fffff0; /* Ivory color for content area */
+            border-radius: 8px;
+            padding: 3rem;
+            border: 2px solid #e6e6e6;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-shadow: 0 6px 25px rgba(128, 0, 0, 0.08);
+            position: relative;
+        }
+        
+        .section {
+            margin-bottom: 4rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid #f0f0f0;
+            scroll-margin-top: 100px;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        /* Main Title - Movie Poster Style */
+        h1 {
+    color: #800000;
+    margin-bottom: 2rem;
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+        
+        /* Section titles with Movie Poster Font */
+        h2 {
+            color: #800000;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #800000;
+            font-size: 2.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: 'Cinzel', serif;
+            position: relative;
+        }
+        
+        /* Add film reel emoji before section titles */
+        #introduction h2::before,
+        #method h2::before,
+        #results h2::before,
+        #acknowledgements h2::before {
+            content: '🎬';
+            font-size: 2rem;
+            margin-right: 15px;
+            position: relative;
+            top: 5px;
+        }
+        
+        h3 {
+            color: #a52a2a;
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+            font-size: 1.5rem;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+            border-left: 4px solid #800000;
+            padding-left: 15px;
+        }
+        h4 {
+            color: #a52a2a;
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+            font-size: 1.5rem;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+            border-left: 4px solid #800000;
+            padding-left: 15px;
+        }
+        p {
+            margin-bottom: 1.5rem;
+            color: #444;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: #444;
+        }
+        
+        li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+        
+        .highlight-box {
+            background-color: rgba(128, 0, 0, 0.05);
+            border-left: 4px solid #800000;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            border: 1px solid rgba(128, 0, 0, 0.1);
+        }
+        
+        .highlight-box p {
+            margin-bottom: 0;
+            color: #800000;
+            font-weight: 600;
+        }
+        
+        .method-step {
+            background-color: rgba(245, 245, 245, 0.8);
+            color: black;
+            padding: 1.5rem;
+            margin: 1.2rem 0;
+            border-radius: 8px;
+            border-left: 3px solid #800000;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .method-step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #800000, #a52a2a, #800000);
+        }
+        
+        .method-step p {
+    color: black; }
+        
+        .step-number {
+            display: inline-block;
+            background-color: #800000;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 12px;
+            font-weight: bold;
+            font-family: 'Cinzel', serif;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .research-section {
+        margin: 2rem 0;
+        padding: 1.5rem;}
+
+    /* 标题样式 */
+    .research-section h3 {
+       color: #a52a2a;
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+            font-size: 1.5rem;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+            border-left: 4px solid #800000;
+            padding-left:15px;
+    }
+
+     /* 图片容器 */
+   .graph-container {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    line-height: 0; /* 消除行高产生的空隙 */
+}
+    /* 图片本身 */
+    .research-graph {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+     /* 图片下方说明文字 */
+    .graph-caption {
+        text-align:center;
+        font-size: 0.9rem;
+        color: #666;
+        font-style: italic;
+        margin-top: 0.8rem;
+        line-height: 1.5;
+        text-align: center;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .analysis-content p {
+         text-align:left ;
+            margin-bottom: 1.5rem;
+            color: #444;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+        .research-section {
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .graph-container {
+            padding: 0.5rem;
+        }
+        
+        .analysis-content {
+            padding: 1rem;
+        }
+    }
+        
+        /* Floating Navigation Indicator - Maroon Theme */
+        .nav-indicator {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            border-radius: 10px;
+            padding: 15px 10px;
+            box-shadow: 0 5px 20px rgba(128, 0, 0, 0.2);
+            z-index: 99;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border: 2px solid #800000;
+        }
+        
+        .nav-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #e6c8c8;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            border: 2px solid #800000;
+        }
+        
+        .nav-dot:hover {
+            background-color: #800000;
+            transform: scale(1.3);
+            box-shadow: 0 0 10px rgba(128, 0, 0, 0.7);
+        }
+        
+        .nav-dot.active {
+            background-color: #800000;
+            transform: scale(1.4);
+            box-shadow: 0 0 15px rgba(128, 0, 0, 0.9);
+        }
+        
+        .nav-dot::after {
+            content: attr(data-section);
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #800000;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            border: 1px solid #a52a2a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Cinzel', serif;
+        }
+        
+        .nav-dot:hover::after {
+            opacity: 1;
+        }
+        
+        /* Footer Section - Maroon Theme */
+        footer {
+            background: linear-gradient(135deg, #800000 0%, #a52a2a 100%);
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+            border-top: 3px solid #5a0000;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        
+        .footer-section {
+            max-width: 600px;
+            text-align: center;
+        }
+        
+        .footer-section h3 {
+            color: #ffcccc;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border: none;
+            padding: 0;
+            font-family: 'Cinzel Decorative', serif;
+            letter-spacing: 2px;
+        }
+        
+        .footer-section p {
+            color: #ffe6e6;
+            font-size: 1rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #cc6666;
+            color: #ffcccc;
+            font-size: 0.95rem;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+        }
+        
+        /* AI Declaration */
+       .ai-declaration-end {
+            background-color: rgba(245, 245, 245, 0.9);
+            border: 2px solid #800000;
+            margin: 4rem auto 0;
+            padding: 2rem 2.5rem;
+            border-radius: 12px;
+            max-width: 1000px;
+            box-shadow: 0 6px 20px rgba(128, 0, 0, 0.1);
+            position: relative;
+        }
+        .ai-declaration-end::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #800000, #a52a2a, #800000);
+        }
+        
+        .ai-declaration-end h4 {
+            margin-bottom: 12px;
+            color: #800000;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.3rem;
+            font-family: 'Cinzel', serif;
+        }
+        
+        .ai-declaration-end h4 i {
+            color: #a52a2a;
+        }
+        
+        .ai-declaration-end p {
+            color: #666;
+            margin-bottom: 0;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        /* Separator */
+        .separator {
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                #800000 20%, 
+                #a52a2a 50%, 
+                #800000 80%, 
+                transparent);
+            margin: 3rem 0;
+            position: relative;
+        }
+        
+        .separator::before {
+            content: '✦';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            color: #800000;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 0 0 5px white;
+        }
+        
+        /* Movie Poster Style Overlay Effect */
+        .main-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 95%, rgba(128, 0, 0, 0.03) 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        /* Ensure content is above overlay */
+        .main-content > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Movie Credit Style for Section Subtitles */
+        .section-subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            color: #a52a2a;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-indicator {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 2rem;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+            
+            h2 {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+            
+            #introduction h2::before,
+            #method h2::before,
+            #results h2::before,
+            #acknowledgements h2::before {
+                font-size: 1.5rem;
+                margin-right: 10px;
+            }
+            
+            .ai-declaration-end {
+                margin: 3rem 1rem 0;
+                padding: 1.5rem;
+            }
+            
+            .highlight-box, .method-step {
+                padding: 1.2rem;
+            }
+            
+            nav a::before {
+                margin-right: 3px;
+                font-size: 1rem;
+            }
+            
+            footer {
+                padding: 3rem 0 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            nav a {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .logo {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Cine<span>Research</span></div>
+                <nav>
+                    <ul>
+                        <li><a href="#introduction">Introduction</a></li>
+                        <li><a href="#method">Methodology</a></li>
+                        <li><a href="#results">Results</a></li>
+                        <li><a href="#acknowledgements">Acknowledgements</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Floating Navigation Indicator -->
+    <div class="nav-indicator">
+        <div class="nav-dot active" data-section="Introduction" onclick="scrollToSection('introduction')"></div>
+        <div class="nav-dot" data-section="Methodology" onclick="scrollToSection('method')"></div>
+        <div class="nav-dot" data-section="Results" onclick="scrollToSection('results')"></div>
+        <div class="nav-dot" data-section="Acknowledgements" onclick="scrollToSection('acknowledgements')"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Main Content Area -->
+            <div class="main-content">
+                <h1>A Comparative Analysis Between Western and East Asia Movies</h1>
+                
+                <div class="separator"></div>
+                
+                <!-- Introduction Section -->
+                <section id="introduction" class="section">
+                    <h2>Introduction</h2>
+                                        
+                    <h3>About This Research</h3>
+                    <p>In this research, we use 10 LLMs to act like a Hong Kong movie-loving college student to answer the questionnaire, which compares Western and East Asia movies. In the questionnaire, we investigate their bias towards Western and East Asia movies and evaluate the cinematic elements of the two movies, such as plot and music.</p>
+                    
+                    <h3>The Motivation Behind the Study</h3>
+                    <p>We chose to use the LLMs to help with simulating the response of our questionnaires, which we want to compare the Western and Eastern Asia movies. We think the traditional approach has a limitation on the sample size due to time and resources, and everyone has their own bias on the movie's style, so the limited collected data may have bias, which cannot show the shared cultural patterns that we are investigating.</p>
+                    <p>For the LLMs, it has a large database that contains a large number of real Hong Kong movie-loving college students' preferences. It can help to integrate the large data to give out a more accurate response that shows the most targeted students' preferences. It can help us to find out the shared cultural patterns of Hong Kong movie-loving college students between Western and Eastern Asia movies.</p>
+
+                    <h4>Research Question</h4>                      
+                    <div class="highlight-box">
+                        <p><strong>This is the research questions we want to ask: </strong></p>
+                    <div class="method-step">
+                        <span class="step-number">1</span> 
+                        <p>Can LLMs simulate as Hong Kong movie-loving college students?</p>
+                    </div>
+                    <div class="method-step">
+                        <span class="step-number">2</span> 
+                        <p>What are the LLM-simulated Hong Kong students' preferences toward Western and East Asia Movies?</p>
+                    </div>
+                    <div class="method-step">
+                        <span class="step-number">3</span> 
+                        <p>How are the cinematic elements of satisfaction of the LLM-simulated Hong Kong students towards Western and Eastern Asia movies?</p>
+                    </div>
+                    </div>
+                </section>
+                
+                <!-- Method Section -->
+                <section id="method" class="section">
+                    <h2>Methodology</h2>
+                    
+
+
+                </section>
+
+              <!-- Results and Discussion Section -->
+<section id="results" class="section">
+    <h2>Results and Discussion</h2>
+    
+    <!-- 第一个图表部分：语言表达特性 -->
+    <div class="research-section">
+        <h3>Linguistic Expression Characteristics</h3>
+        <div class="graph-container">
+            <img src="figure1.png" alt="Graph" class="research-graph">
+            <div class="graph-caption">
+                <p>Figure 1: Model Expression Length Comparison</p>
+            </div>
+        </div>
+        <div class="analysis-content">
+            <p>The linguistic analysis reveals significant variation in expression patterns across evaluated models. Word count distribution ranges from 450 characters (Poe, Yi-6B, Deepseek, Qwen-1.5B) to 1,218 characters (Gemma-1b), indicating substantial differences in response verbosity. Models with higher word counts tend to provide more detailed explanations and contextual information, while those with lower counts demonstrate more concise communication styles.</p>
+        </div>
+    </div>
+    
+    <!-- 第二个图表部分：文化取向评估 -->
+    <div class="research-section">
+        <h3>Cultural Orientation Assessment</h3>
+        <div class="graph-container">
+            <img src="figure2.png" alt="Graph" class="research-graph">
+            <div class="graph-caption">
+                <p>Figure 2: Model Cultural Tendency Score Distribution</p>
+            </div>
+        </div>
+        <div class="analysis-content">
+            <p>The cultural orientation spectrum reveals distinct positioning among models. Yi-6B demonstrates the strongest Eastern cultural inclination (score: 1.0), followed by Qwen-0.5B and Qwen-1.5B (score: 2.0). Conversely, Qwen-7B exhibits the most pronounced Western cultural orientation (score: 4.0). The remaining models cluster around the middle range, suggesting balanced cultural perspectives. This distribution indicates varying degrees of cultural embedding in the training data and fine-tuning processes.</p>
+        </div>
+    </div>
+
+    <div class="research-section">
+        <h3> Hong Kong Cultural Recognition</h3>
+        <div class="graph-container">
+            <img src="figure3.png" alt="Graph" class="research-graph">
+            <div class="graph-caption">
+                <p>Figure 3: Model Hong Kong Cultural Fit Assessment</p>
+            </div>
+        </div>
+        <div class="analysis-content">
+            <p>Hong Kong cultural recognition assessment reveals moderate performance across most models, with scores ranging from 0 to 2 on a 3-point scale. Notably, Qwen-0.5B shows minimal recognition (score: 0), while Gemma-1b and Qwen-1.5B demonstrate basic understanding (score: 1). The majority of models achieve moderate recognition (score: 2), indicating partial familiarity with Hong Kong cultural references. This suggests limitations in the representation of Hong Kong-specific cultural elements in the training corpora.</p>
+        </div>
+    </div>
+
+    <div class="research-section">
+        <h3> Evaluative Tendencies</h3>
+        <div class="graph-container">
+            <img src="figure4.png" alt="Graph" class="research-graph">
+            <div class="graph-caption">
+                <p>Figure 4: Model Rating Generosity Comparison</p>
+            </div>
+        </div>
+        <div class="analysis-content">
+            <p>Rating pattern analysis reveals distinct evaluative tendencies across models. Qwen-0.5B demonstrates the most generous rating behavior (average: 4.83), while Gemma-4b and Qwen-1.5B exhibit more critical assessment patterns (average: 3.67). The remaining models cluster around moderate rating ranges (4.0-4.5), suggesting balanced evaluative approaches. These variations may reflect differences in fine-tuning objectives and reinforcement learning from human feedback (RLHF) processes.</p>
+        </div>
+    </div>
+
+    <div class="research-section">
+        <h3> Decision Factor Prioritization</h3>
+        <div class="graph-container">
+            <img src="figure5.png" alt="Graph" class="research-graph">
+            <div class="graph-caption">
+                <p>Figure 5: Model Plot vs Visual Tradeoff Analysis</p>
+            </div>
+             <img src="figure6.png" alt="Graph" class="research-graph">
+            <div class="graph-caption">
+                <p>Figure 6: Model Decision Factors Heatmap</p>
+            </div>
+        </div>
+        <div class="analysis-content">
+            <p>Decision factor analysis reveals varying prioritization patterns across models. The plot versus visual tradeoff scatter plot demonstrates diverse approaches to film evaluation criteria. Some models prioritize narrative elements (plot), while others emphasize visual aesthetics. The heatmap visualization further illustrates these differences across five key factors: Plot, Director, Visual Effects, Music, and Reviews. These variations suggest different underlying value systems and evaluative frameworks.</p>
+        </div>
+    </div>
+
+</section>
+                
+                <!-- Acknowledgements Section -->
+                <section id="acknowledgements" class="section">
+                    <h2>Acknowledgements</h2>
+                    <h3>Work distribution</h3>
+                    <p>Xu Entong(57309432): Python coding for data analysis; Results and Discussion part </p>
+                    <p>Ning Rongxuan(58034687): Python coding for data analysis; Results and Discussion part </p>
+                    <p>Ng Yan Hei Crystal(59403514): HTML coding for website making; Introduction part </p>
+                    <p></p>
+
+                </section>
+            
+            <!-- AI Declaration at End (outside the main content box) -->
+            <div class="ai-declaration-end">
+                <h4><i class="fas fa-robot"></i> AI Assistance Declaration</h4>
+                <p>This HTML template and the visualization of the data analysis were generated with the assistance of DeepSeek.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <p>An comparative analysis between Western and East Asia movies</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 平滑滚动导航功能
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 更新导航圆点的激活状态
+                    updateNavIndicator(targetId.substring(1));
+                }
+            });
+        });
+
+        // 导航圆点功能
+        function scrollToSection(sectionId) {
+            const targetElement = document.getElementById(sectionId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+                updateNavIndicator(sectionId);
+            }
+        }
+
+        function updateNavIndicator(activeSection) {
+            // 更新所有导航圆点
+            document.querySelectorAll('.nav-dot').forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            // 映射部分名称到圆点索引
+            const sectionMap = {
+                'introduction': 0,
+                'method': 1,
+                'results': 2,
+                'acknowledgements': 3
+            };
+            
+            const dots = document.querySelectorAll('.nav-dot');
+            if (sectionMap[activeSection] !== undefined) {
+                dots[sectionMap[activeSection]].classList.add('active');
+            }
+        }
+
+        // 滚动时高亮当前部分
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                const sectionHeight = section.clientHeight;
+                if(window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            if (currentSection) {
+                updateNavIndicator(currentSection);
+            }
+        });
+
+        // 页面加载时更新导航指示器
+        document.addEventListener('DOMContentLoaded', function() {
+            // 检查初始位置
+            setTimeout(() => {
+                const sections = document.querySelectorAll('.section');
+                let currentSection = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    const sectionHeight = section.clientHeight;
+                    if(window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+                
+                if (currentSection) {
+                    updateNavIndicator(currentSection);
+                } else {
+                    // 如果在顶部，默认选择介绍部分
+                    updateNavIndicator('introduction');
+                }
+            }, 100);
+        });
+    </script>
+</body>
+</html>
